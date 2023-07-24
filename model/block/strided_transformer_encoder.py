@@ -62,7 +62,7 @@ class SublayerConnection(nn.Module):
         super(SublayerConnection, self).__init__()
         self.norm = LayerNorm(size)
         self.dropout = nn.Dropout(dropout)
-        self.pooling = nn.MaxPool1d(1, stride_num[i])
+        self.pooling = nn.MaxPool1d(stride_num[i], stride_num[i])
         
     def forward(self, x, sublayer, i=-1, stride_num=-1):
         if i != -1:
